@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Info</h1>
+        <h3>Update your personal details here</h3>
+        
+        <form id="userForm">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+                <div class="error" id="nameError">Please enter your name</div>
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="1" max="150" placeholder="Your age" required>
+                <div class="error" id="ageError">Please enter a valid age</div>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="gender" value="Male">
+                        Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="Female">
+                        Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="Other">
+                        Other
+                    </label>
+                </div>
+                <div class="error" id="genderError">Please select a gender</div>
+            </div>
+
+            <!-- Country -->
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">Select a country</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Japan">Japan</option>
+                    <option value="China">China</option>
+                </select>
+                <div class="error" id="countryError">Please select a country</div>
+            </div>
+
+            <!-- Technological Stack -->
+            <div class="form-group">
+                <label>Technological Stack</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="tech" value="HTML">
+                        HTML
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tech" value="CSS">
+                        CSS
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tech" value="JS">
+                        JS
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tech" value="React">
+                        React
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tech" value="React Native">
+                        React Native
+                    </label>
+                </div>
+                <div class="error" id="techError">Please select at least one technology</div>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" placeholder="Your address" required></textarea>
+                <div class="error" id="addressError">Please enter your address</div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="telephone">Phone Number</label>
+                <input type="tel" id="telephone" name="telephone" pattern="[+]?[0-9]{1,4}?[\s.-]?[(]?[0-9]{1,4}[)]?[\s.-]?[0-9]{1,4}[\s.-]?[0-9]{1,9}" placeholder="Your phone number" required>
+                <div class="error" id="telephoneError">Please enter a valid phone number</div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+                <div class="error" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button type="button" id="resetBtn">Reset</button>
+                <button type="button" id="submitBtn">Submit</button>
+            </div>
+        </form>
+
+        <!-- Result Section -->
+        <div id="resultSection">
+            <h2>Form Data</h2>
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody id="resultBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
